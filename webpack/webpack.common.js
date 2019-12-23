@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     app: './src/client/index.js',
@@ -18,6 +18,7 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      
     ],
   },
   plugins: [
@@ -25,5 +26,6 @@ module.exports = {
       title: 'My website',
       template:'./template/client.html'
     }),
+    new CleanWebpackPlugin(),
   ],
 };
