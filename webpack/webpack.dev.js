@@ -1,6 +1,7 @@
 const merge = require('webpack-merge');
 const commonConfig = require('./webpack.common');
 const path = require('path');
+// var generator = require('inline-source-map');
 module.exports = merge(commonConfig, {
   mode: 'development',
   devServer: {
@@ -8,4 +9,5 @@ module.exports = merge(commonConfig, {
     compress: true,
     port: 3000,
   },
+  devtool:'inline-source-map',
 });
